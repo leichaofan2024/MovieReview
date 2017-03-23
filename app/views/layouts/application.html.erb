@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MovieReview</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "common/navbar" %>
+    <div class="container-fluid" style= "margin-top:20px;">
+      <%= render "common/flashes" %>
+      <%= yield %>
+    </div>
+
+    <%= render "common/footer" %>
+  </body>
+</html>
