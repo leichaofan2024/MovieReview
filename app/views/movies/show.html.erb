@@ -1,0 +1,23 @@
+<div class="pull-right">
+  <% if !current_user.favorites.include?(@movie) %>
+    <%= link_to("加入收藏", join_to_favorite_movie_path(@movie), method: :post,class: "btn btn-primary") %>
+  <% else %>
+    <%= link_to("取消收藏", quite_favorite_movie_path(@movie), method: :post, class: "btn btn-info") %>
+  <% end %>
+</div>
+<div class="col-md-10 col-md-offset-1">
+  <h2 class="text-center"><%= @movie.title %></h2>
+  <hr>
+  <p class="text-center"><%= @movie.description %></p>
+
+  <h3><%= link_to("我要评论", new_movie_review_path(@movie)) %></h3>
+
+<hr>
+<div class="">
+  <% @reviews.each do |review| %>
+    <%= review.user.email %> 说： <br>
+    <%= review.content %>
+    <hr>
+  <% end %>
+</div>
+</div>

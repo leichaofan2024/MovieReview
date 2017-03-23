@@ -1,0 +1,9 @@
+<div class="col-md-10 col-md-offset-1">
+  <h2>新建影片</h2>
+  <hr>
+  <%= simple_form_for @movie do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.submit "Submit", date: { disable_with: "Submitting..."} %>
+  <% end %>
+</div>
