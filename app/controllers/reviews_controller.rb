@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
   before_action :require_favorite
-  def new
-    @movie = Movie.find(params[:movie_id])
-    @review = Review.new
-  end
+  # def new
+  #   @movie = Movie.find(params[:movie_id])
+  #   @review = Review.new
+  # end
   def create
     @movie = Movie.find(params[:movie_id])
     @review = Review.new(review_params)

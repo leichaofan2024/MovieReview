@@ -10,7 +10,7 @@
   <hr>
   <p class="text-center"><%= @movie.description %></p>
 
-  <h3><%= link_to("我要评论", new_movie_review_path(@movie)) %></h3>
+  <!-- <h3><%= link_to("我要评论", new_movie_review_path(@movie)) %></h3> -->
 
 <hr>
 <div class="">
@@ -20,4 +20,8 @@
     <hr>
   <% end %>
 </div>
+  <%= simple_form_for @review,url: movie_reviews_path(@movie) do |f|%>
+   <%= f.input :content %>
+   <%= f.submit "评论" %>
+  <% end %>
 </div>
